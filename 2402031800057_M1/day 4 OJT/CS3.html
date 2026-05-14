@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="result"></p>
+
+<script>
+let year = prompt("Enter a year:");
+
+if ((year % 4 == 0 && year % 100 != 0) || (year % 400 == 0))
+    document.getElementById("result").innerHTML = year + " is a Leap Year";
+else
+    document.getElementById("result").innerHTML = year + " is not a Leap Year";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+header {
+  background: black;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+}
+
+.box {
+  background: rgb(84, 169, 197);
+  padding: 40px;
+  width: 30%;
+  text-align: center;
+  border: 3px solid rgb(4, 4, 82)
+}
+body{
+    background-color: lightblue;
+}
+
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
+  }
+
+.box{
+    width: 100%;
+  }
+}

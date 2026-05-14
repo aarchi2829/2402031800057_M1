@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>animation example</title>
+    <style>
+        body{
+            flex-direction: column;
+            background-color: plum;
+        }
+        #box{
+            background-color: rgb(203, 58, 130);
+            border: 3px solid black;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+        }
+        #box2{
+            background-color: blueviolet;
+            border: 5px solid black;
+            text-align: center;
+            height: 100px;
+            width: 100px;
+        }
+        #box3{
+            background-color: rgb(43, 226, 214);
+            border: 5px solid black;
+            text-align: center;
+            height: 100px;
+            width: 100px;  }
+
+        .card {
+            width: 250px;
+            height: 320px;
+            background: rgb(228, 214, 135);
+            border: 5px solid black;
+            overflow: hidden;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            animation: float 3s ease-in-out infinite;
+            
+        }
+        #box:hover{
+             transform: scale(1.3) rotate(45deg) translateY(-20px);
+        }
+        #box2:hover{
+            transform: scale(2.1) rotate(45deg) translateX(10px);
+        }
+        #box3:hover{
+            transform: scale(4.4) rotate(50deg) translateX(50px);
+        }
+        .card:hover {
+             transform: translateY(-15px) scale(1.05);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+   @keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+  }
+    </style>
+</head>
+<body>
+    <div id="box">Box 1</div>
+    <div id="box2">Box 2</div>
+    <div id="box3">Box 3</div>
+    <div class="card">Box 4</div>
+</body>
+</html>

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>  Data Types</title>
+
+    
+</head>
+<body>
+
+    <h2>JavaScript  Data Types</h2>
+    <div id="output"></div>
+
+    <script>
+        // 1. Number
+        let age = 20;
+        let price = 99.99;
+
+        // 2. String
+        let name = "Aarchi";
+        let message = "Hello World";
+
+        // 3. Boolean
+        let isStudent = true;
+        let isLoggedIn = false;
+
+        // 4. Undefined
+        let x;
+
+        // 5. Null
+        let data = null;
+
+
+        // Display on webpage
+        document.getElementById("output").innerHTML =
+            "Number: " + age + ", " + price + "<br><br>" +
+            "String: " + name + ", " + message + "<br><br>" +
+            "Boolean: " + isStudent + ", " + isLoggedIn + "<br><br>" +
+            "Undefined: " + x + "<br><br>" +
+            "Null: " + data + "<br><br>";
+
+document.write("<h2>Operators</h2>");
+
+            // Post Increment / Decrement
+let x1 = 5;
+document.write("<h3>Post Increment/Decrement</h3>");
+document.write("Post Increment: " + (x1++) + "<br>");
+document.write("After Post Increment: " + x1 + "<br>");
+
+document.write("Post Decrement: " + (x1--) + "<br>");
+document.write("After Post Decrement: " + x1 + "<br><br>");
+
+
+// Pre Increment / Decrement
+let y1 = 5;
+
+document.write("<h3>Pre Increment/Decrement</h3>");
+document.write("Pre Increment: " + (++y1) + "<br>");
+document.write("Pre Decrement: " + (--y1) + "<br><br>");
+
+
+// Comparison Operators
+let p = 10;
+let q = "10";
+document.write("<h3>Comparison Operators</h3>");
+document.write("== : " + (p == q) + "<br>");
+document.write("!= : " + (p != q) + "<br>");
+document.write("> : " + (p > 5) + "<br>");
+document.write(">= : " + (p >= 10) + "<br>");
+document.write("< : " + (p < 20) + "<br>");
+document.write("<= : " + (p <= 10) + "<br><br>");
+
+
+// Strict Comparison Operators
+document.write("<h3>Strict Comparison Operators</h3>");
+document.write("=== : " + (p === q) + "<br>");
+document.write("!== : " + (p !== q) + "<br>");
+
+
+
+    </script>
+
+</body>
+</html>
