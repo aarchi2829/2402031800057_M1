@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>get Element By name example</title>
+</head>
+<body>
+
+    <input type="text" name="myText">
+
+    <button onclick="myFunction()">Click Me</button>
+
+    <script>
+        function myFunction()
+        {
+            let a = document.getElementsByName("myText")[0];
+            alert(a.value);
+        }
+    </script>
+
+</body>
+</html>
