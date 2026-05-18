@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+</head>
+
+<body>
+
+<form name="Register" id="Register" onsubmit="return validate()">
+
+    <table>
+        <tr>
+            <td colspan="2">
+                <h1 style="text-align:center;">REGISTRATION FORM</h1>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Name:</td>
+            <td>
+                <input type="text" size="40" name="Name" placeholder="enter name">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Email:</td>
+            <td>
+                <input type="email" size="40" name="Email" placeholder="enter your email address">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Password:</td>
+            <td>
+                <input type="password" size="40" name="Password">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Phone No:</td>
+            <td>
+                <input type="number" size="40" name="PhoneNo" placeholder="xxxxxxxxxx">
+            </td>
+        </tr>
+
+        <tr>
+            <td>Select Your Course:</td>
+            <td>
+                <select name="Subject">
+                    <option value="">--Select--</option>
+                    <option>B.Tech</option>
+                    <option>M.Tech</option>
+                    <option>BCA</option>
+                    <option>MCA</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td>Comments:</td>
+            <td>
+                <textarea cols="40" name="Comment"></textarea>
+            </td>
+        </tr>
+
+        <tr>
+            <td></td>
+            <td>
+                <input type="submit" value="Submit">
+                <input type="reset" value="Reset">
+            </td>
+        </tr>
+
+    </table>
+
+</form>
+
+<script>
+
+function validate() {
+
+    var form1 = document.getElementById("Register");
+
+    var name = form1.Name.value;
+    var email = form1.Email.value;
+    var phone = form1.PhoneNo.value;
+    var what = form1.Subject;
+    var password = form1.Password.value;
+
+    var regEmail = /^\w+([.-]?\w+)*@\w+([.-]?\w+)*(\.\w{2,3})+$/;
+    var regPhone = /^\d{10}$/;
+    
+
+    if (name == "") {
+        alert("Please Enter Your Name");
+        return false;
+    }
+
+    else if (email == "" || !regEmail.test(email)) {
+        alert("Please enter a valid e-mail address");
+        return false;
+    }
+
+    else if (password == "") {
+        alert("Please enter your password");
+        return false;
+    }
+
+    else if (password.length < 6) {
+        alert("Password should be at least 6 characters long");
+        return false;
+    }
+
+    else if (phone == "" || !regPhone.test(phone)) {
+        alert("Please enter valid phone number");
+        return false;
+    }
+
+    else if (what.selectedIndex == 0) {
+        alert("Please select your course");
+        return false;
+    }
+
+    else {
+        alert("Form Submitted Successfully");
+        return true;
+    }
+}
+
+</script>
+
+</body>
+</html>

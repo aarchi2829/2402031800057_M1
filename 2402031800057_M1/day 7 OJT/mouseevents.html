@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=\, initial-scale=1.0">
+    <title>mouseover and mouseout events</title>
+    <style>
+        #bulb{
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+    
+</head>
+<body> 
+     <img src="https://cdn5.vectorstock.com/i/1000x1000/70/44/3d-realistic-off-light-bulb-icon-closeup-vector-27407044.jpg" alt="" id="bulb"> 
+</body>
+<script>
+ var a = document.getElementById("bulb");
+a.addEventListener("mouseover",()=>{
+     a.src= "https://www.pngall.com/wp-content/uploads/2016/03/Light-Bulb-PNG-File.png";
+});
+a.addEventListener("mouseout",()=>{
+    a.src= "https://cdn5.vectorstock.com/i/1000x1000/70/44/3d-realistic-off-light-bulb-icon-closeup-vector-27407044.jpg";
+});
+</script>
+
+</html>
