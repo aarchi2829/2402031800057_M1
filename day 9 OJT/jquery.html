@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>j query example</title>
+    <style>
+.answer{
+    display:none;
+}
+
+.faq{
+    width:300px;
+    text-align:left;
+    padding:10px;
+    margin:5px 0;
+}
+
+.symbol{
+    font-weight:bold;
+    margin-right:10px;
+}
+</style>
+</head>
+
+<body>
+    <p id="p1">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Tempora deleniti fugit ducimus nam, doloremque non esse deserunt odio vel aspernatur impedit obcaecati quos maiores exercitationem. Omnis exercitationem dolorem accusamus eum!</p>
+    <p id="p2">Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta aliquid vel totam possimus, quaerat quos asperiores, quo rem hic laudantium pariatur consequuntur aut dolore sit, molestiae magnam! Distinctio, veniam officiis.</p>
+    <p id="p3">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Accusamus, dolorem aliquid maiores magnam eum laborum dolores odio sunt sed modi exercitationem, voluptate sit corporis voluptas a saepe, consectetur eligendi sequi!</p>
+    <button id="fadein">fade in</button>
+    <button id="fadeout">fade out</button>
+    <button id="hide">hide</button>
+    <button id="show">show </button>
+    <button id="toggle">toggle</button>
+    <p id="p4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Magni ad ullam atque inventore? Tempora, perferendis. Corrupti tenetur cumque, fugiat ab quis placeat nulla sit quasi nihil molestias quas ipsam magnam.</p>
+    <p id="p5">Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt ullam voluptatum molestiae quidem officiis quia dolores saepe optio, quis in reprehenderit, vel soluta a ad aliquid numquam. Perferendis, doloribus voluptates.</p>
+    
+    <label>Enter text:
+
+    </label>
+    <input type="text" id="text">
+
+    <button id="btn" >Submit</button>
+    <p id="message"></p>
+
+    <h2>FAQs</h2>
+
+<button class="faq">
+    <span class="symbol">+</span>
+    What is jQuery?
+</button>
+<p class="answer">jQuery is a JavaScript library.</p>
+
+<button class="faq">
+    <span class="symbol">+</span>
+    What is HTML?
+</button>
+<p class="answer">HTML stands for HyperText Markup Language.</p>
+
+<button class="faq">
+    <span class="symbol">+</span>
+    What is CSS?
+</button>
+<p class="answer">CSS is used for styling web pages.</p>
+    
+    <script
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+
+<script>
+    //$("#btn").click(function(){
+        // var name=($("#text").val());
+        //alert(name);
+    
+   // });
+
+    //$(document).ready(function(){
+     //   alert("page loaded");
+    //});
+
+    $(document).ready(function() {
+    $("#btn").click(function() {
+        var name = $("#text").val();
+        $("#message").text(name);
+        $("#message").html("<b>Your name is</b> " + name);
+    });
+});
+
+$("#p1").css("color","blue");
+$("#p1").css({
+    color:"white",
+    "background-color":"blue"
+
+});
+$("#p2").hide();
+$("#p2").show();
+
+$("#p3").css({
+    color:"white",
+    "background-color":"black"
+
+});
+
+$(document).ready(function() {
+     $("#hide").click(function(){
+        $("#p3").hide();
+    });
+
+    $("#show").click(function(){
+        $("#p3").show();
+    });
+
+    $("#fadeout").click(function(){
+        $("#p3").fadeOut();
+    });
+
+    $("#fadein").click(function(){
+        $("#p3").fadeIn();
+    });
+
+    $("#toggle").click(function(){
+        $("#p3").toggle();
+    });
+    
+});
+
+$(document).ready(function(){
+
+    $(".faq").click(function(){
+
+        $(this).next(".answer").toggle();
+
+        let symbol = $(this).find(".symbol");
+
+        if(symbol.text() == "+"){
+            symbol.text("-");
+        } else {
+            symbol.text("+");
+        }
+
+    });
+
+});
+
+    
+
+</script>
+
+</body>
+</html>

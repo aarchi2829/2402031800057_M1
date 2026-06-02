@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo">do while </p>
+
+<script>
+let pin = "";
+let correctPin = "1234";
+
+do{
+    pin = prompt("Enter ATM PIN");
+}
+while(pin !== correctPin);
+
+document.getElementById("demo").innerHTML = "Correct PIN Entered";
+</script>
+
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>variable argument example</title>
+</head>
+<body>
+    <script>
+        document.write(a);
+function sum ()
+{
+  var s = 0;
+  for(var i = 0; i < arguments.length; i++)
+	s += arguments[i];
+  return s;
+}
+
+var a = sum(1, 2, 3);
+var a = sum(1, 2, 3, 4, 5);	
+var a = sum(1, 2, "3", 4, 5);	
+
+    </script>
+</body>
+</html>

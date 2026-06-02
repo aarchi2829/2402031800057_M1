@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+
+    <title>Packages</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <section class="packages">
+
+        <h1 class="package-title">
+            Our Packages
+        </h1>
+
+        <div class="package-container">
+
+            <div class="package-card">
+
+                <h2>Basic</h2>
+
+                <h1>₹15,000</h1>
+
+                <p>3 Days Trip</p>
+                <p>Hotel Included</p>
+                <p>Free Breakfast</p>
+
+                <button class="plan">Choose Plan</button>
+
+            </div>
+
+
+            <div class="package-card premium">
+
+                <h2>Premium</h2>
+
+                <h1>₹35,000</h1>
+
+                <p>7 Days Trip</p>
+                <p>Luxury Hotel</p>
+                <p>Free Guide</p>
+
+                <button class="plan">Choose Plan</button>
+
+            </div>
+
+
+            <div class="package-card">
+
+                <h2>Luxury</h2>
+
+                <h1>₹60,000</h1>
+
+                <p>10 Days Trip</p>
+                <p>5 Star Resort</p>
+                <p>All Inclusive</p>
+
+                <button class="plan">Choose Plan</button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+<script>
+
+let buttons = document.querySelectorAll(".plan");
+
+buttons.forEach((btn)=>{
+
+    btn.addEventListener("click",()=>{
+
+        alert("Package Booked Successfully ");
+
+    });
+
+});
+
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,49 @@
+#para{
+    color:aqua;
+    font-style: italic;
+    background-color: darkblue;
+}
+.myclass{
+    color: crimson;
+}
+p{
+    color: gold;
+    background-color: black;
+}
+
+.class1{
+    color: indigo;
+}
+.class2{
+    text-align: center;
+}
+
+h4,h5{
+    color: mediumvioletred;
+}
+
+div h1{
+    color: lightseagreen;
+    font-style: italic;
+}
+
+body{
+    background-image: url(mountain-range-9842371_1280.webp);
+    background-repeat: repeat-x;
+    background-repeat: no-repeat;
+}
+
+h2{
+    font-family:monospace;
+    text-decoration: underline;
+    word-spacing:3px;
+}
+
+.box{
+    border: 5px solid black;
+    margin: 10px;
+    padding: 10px;
+    height: 200px;
+    width: 200px;
+    text-align:justify;
+}
