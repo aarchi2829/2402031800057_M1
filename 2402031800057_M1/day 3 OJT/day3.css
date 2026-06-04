@@ -1,0 +1,21 @@
+
+
+#div1{
+    background-color: darkcyan ;
+    float: left;
+    width: 40%;
+}
+
+#div2{
+    background-color: blueviolet;
+    float: right;
+    width: 40%;
+}
+
+/*div{
+    height: 200px;
+    width: 200px;
+    background-color: rgb(46, 112, 203);
+    border: 5px solid black;
+    position: absolute; 
+}*/

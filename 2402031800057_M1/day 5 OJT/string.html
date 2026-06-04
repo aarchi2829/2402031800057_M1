@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>String Methods</title>
+</head>
+<body>
+
+<script>
+
+// charAt()
+let str = "JavaScript";
+document.write("charAt(): " + str.charAt(4) + "<br><br>");
+
+// concat()
+let a = "Hello";
+let b = "World";
+document.write("concat(): " + a.concat(" ", b) + "<br><br>");
+
+// indexOf()
+document.write("indexOf(): " + str.indexOf("a") + "<br><br>");
+
+// lastIndexOf()
+document.write("lastIndexOf(): " + str.lastIndexOf("a") + "<br><br>");
+
+// search()
+let s1 = "I hate JavaScript";
+document.write("search(): " + s1.search("Java") + "<br><br>");
+
+// match()
+let s2 = "cat bat rat";
+document.write("match(): " + s2.match(/at/g) + "<br><br>");
+
+// replace()
+let s3 = "Hello World";
+document.write("replace(): " + s3.replace("World", "JavaScript") + "<br><br>");
+
+// substr()
+document.write("substr(): " + str.substr(0,4) + "<br><br>");
+
+// substring()
+document.write("substring(): " + str.substring(0,4) + "<br><br>");
+
+// slice()
+document.write("slice(): " + str.slice(4) + "<br><br>");
+
+// toLowerCase()
+let s4 = "HELLO";
+document.write("toLowerCase(): " + s4.toLowerCase() + "<br><br>");
+
+// toUpperCase()
+let s5 = "hello";
+document.write("toUpperCase(): " + s5.toUpperCase() + "<br><br>");
+
+// toLocaleLowerCase()
+document.write("toLocaleLowerCase(): " + s4.toLocaleLowerCase() + "<br><br>");
+
+// toLocaleUpperCase()
+document.write("toLocaleUpperCase(): " + s5.toLocaleUpperCase() + "<br><br>");
+
+// toString()
+let num = 123;
+document.write("toString(): " + num.toString() + "<br><br>");
+
+// valueOf()
+let s6 = new String("Hello");
+document.write("valueOf(): " + s6.valueOf() + "<br><br>");
+
+// split()
+let fruits = "apple,banana,mango";
+document.write("split(): " + fruits.split(",") + "<br><br>");
+
+// trim()
+let s7 = "   Hello World   ";
+document.write("trim(): " + s7.trim() + "<br><br>");
+
+// includes()
+document.write("includes(): " + str.includes("Script") + "<br><br>");
+
+// startsWith()
+document.write("startsWith(): " + str.startsWith("Java") + "<br><br>");
+
+// endsWith()
+document.write("endsWith(): " + str.endsWith("Script") + "<br><br>");
+
+// repeat()
+let s8 = "Hi ";
+document.write("repeat(): " + s8.repeat(3) + "<br><br>");
+
+// padStart()
+let s9 = "5";
+document.write("padStart(): " + s9.padStart(3,"0") + "<br><br>");
+
+// padEnd()
+document.write("padEnd(): " + s9.padEnd(3,"0") + "<br><br>");
+
+// charCodeAt()
+let s10 = "A";
+document.write("charCodeAt(): " + s10.charCodeAt(0) + "<br><br>");
+
+// at()
+document.write("at(): " + str.at(-1) + "<br><br>");
+
+// replaceAll()
+let s11 = "cat cat cat";
+document.write("replaceAll(): " + s11.replaceAll("cat","dog") + "<br><br>");
+
+// localeCompare()
+document.write("localeCompare(): " + "apple".localeCompare("banana") + "<br><br>");
+
+// trimStart()
+let s12 = "   Hello   ";
+document.write("trimStart(): " + s12.trimStart() + "<br><br>");
+
+// trimEnd()
+document.write("trimEnd(): " + s12.trimEnd() + "<br><br>");
+
+</script>
+
+</body>
+</html>
