@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tech Quest</title>
+
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <div class="circle circle1"></div>
+  <div class="circle circle2"></div>
+
+  <nav>
+      <div class="logo">TECH QUEST</div>
+
+      <ul>
+          <li>Home</li>
+          <li>Missions</li>
+          <li>Leaderboard</li>
+          <li>About</li>
+      </ul>
+  </nav>
+
+  <section class="hero">
+
+      <h1>LEVEL UP YOUR CODE</h1>
+
+      <p>
+          Complete coding missions, earn XP,
+          unlock badges, and become the ultimate developer warrior.
+      </p>
+      
+        <a href="login.html">
+      <button class="btn">START GAME</button>
+        </a>
+
+  </section>
+
+  <div class="auth-container">
+
+    <div class="form-box">
+
+        <h2>PLAYER LOGIN</h2>
+
+        <input type="email" id="loginEmail" placeholder="Enter Email">
+
+        <input type="password" id="loginPassword" placeholder="Enter Password">
+
+        <button onclick="login()" class="auth-btn">
+            LOGIN
+        </button>
+
+    </div>
+
+    <div class="form-box">
+
+        <h2>NEW PLAYER</h2>
+
+        <input type="email" id="signupEmail" placeholder="Create Email">
+
+        <input type="password" id="signupPassword" placeholder="Create Password">
+
+        <button onclick="signup()" class="btn">
+            SIGN UP
+        </button>
+
+    </div>
+
+</div>
+
+<script src="script.js"></script>
+
+</body>
+</html>
