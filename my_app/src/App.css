@@ -1,0 +1,11 @@
+.test{
+  color: blue;
+}
+
+.visible{
+  display: block;
+}
+ 
+.invisible{
+display: none;
+}
