@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Spotify Clone</title>
+<link href="https://fonts.googleapis.com/css2?family=Circular+Std:wght@400;700&family=Space+Grotesk:wght@300;400;500;600;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/6c98d57141.js"></script>
+</head>
+<body>
+
+<!-- TOAST -->
+<div class="toast" id="toast"></div>
+
+<!-- ── NAVBAR ── -->
+<nav>
+  <div class="brand">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+      <path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/>
+    </svg>
+    Spotify
+  </div>
+  <div class="nav-links">
+    <a href="#" class="active">Home</a>
+    <a href="#">About</a>
+    <a href="#">Contact</a>
+  </div>
+  <div class="nav-right">
+    <div class="search-wrap">
+      <i class="fa fa-search"></i>
+      <input type="text" id="searchInput" placeholder="Search songs, artists...">
+    </div>
+    <button class="liked-btn" id="likedToggle" title="Liked Songs">
+      <i class="fa-regular fa-heart"></i>
+    </button>
+  </div>
+</nav>
+
+<!-- SEARCH RESULTS DROPDOWN -->
+<div id="searchResults">
+  <div class="sr-title">Results</div>
+  <div id="srList"></div>
+</div>
+
+<!-- ── BANNER SLIDER ── -->
+<div class="banner">
+  <div class="slide active" data-index="0">
+    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=1400&q=80" alt="">
+    <div class="slide-overlay"></div>
+    <div class="slide-text">
+      <h2>Top Hits 2026</h2>
+      <p>Listen to what's trending right now</p>
+      <button class="play-banner" data-song="0"><i class="fa fa-play"></i> Play Now</button>
+    </div>
+  </div>
+  <div class="slide" data-index="1">
+    <img src="https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=1400&q=80" alt="">
+    <div class="slide-overlay"></div>
+    <div class="slide-text">
+      <h2>Chill Vibes</h2>
+      <p>Relax and float with the music</p>
+      <button class="play-banner" data-song="1"><i class="fa fa-play"></i> Play Now</button>
+    </div>
+  </div>
+  <div class="slide" data-index="2">
+    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?w=1400&q=80" alt="">
+    <div class="slide-overlay"></div>
+    <div class="slide-text">
+      <h2>Feel The Beat</h2>
+      <p>High energy tracks for your mood</p>
+      <button class="play-banner" data-song="2"><i class="fa fa-play"></i> Play Now</button>
+    </div>
+  </div>
+  <div class="slider-dots">
+    <div class="dot active" data-dot="0"></div>
+    <div class="dot" data-dot="1"></div>
+    <div class="dot" data-dot="2"></div>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<main>
+
+  <!-- LIKED SECTION (hidden by default) -->
+  <section id="likedSection">
+    <div class="section-header">
+      <h2>❤️ Liked Songs</h2>
+    </div>
+    <div class="song-list" id="likedList"></div>
+  </section>
+
+  <!-- BEST OF NCS -->
+  <section>
+    <div class="section-header">
+      <h2>Best of NCS</h2>
+      <a class="see-all" href="#">See all</a>
+    </div>
+    <div class="song-list" id="mainSongList"></div>
+  </section>
+
+  <!-- RECENTLY PLAYED -->
+  <section>
+    <div class="section-header">
+      <h2>Recently Played</h2>
+      <a class="see-all" href="#">See all</a>
+    </div>
+    <div class="cards-grid" id="recentGrid"></div>
+  </section>
+
+  <!-- FAV ARTISTS -->
+  <section>
+    <div class="section-header">
+      <h2>Your Favourite Artists</h2>
+      <a class="see-all" href="#">See all</a>
+    </div>
+    <div class="artists-grid" id="artistsGrid"></div>
+  </section>
+
+  <!-- ADD SONG -->
+  <section class="add-song-section">
+    <h3><i class="fa fa-plus-circle" style="color:var(--green);margin-right:8px;"></i>Add a Song</h3>
+    <div class="add-form">
+      <input type="text" id="inSongName" placeholder="Song Name">
+      <input type="text" id="inArtist" placeholder="Artist">
+      <input type="text" id="inDuration" placeholder="Duration (e.g. 3:45)">
+      <button id="addSongBtn">Add Song</button>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── PLAYER ── -->
+<div id="player">
+  <!-- Left -->
+  <div class="player-info">
+    <img id="nowPlayingImg" src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=60&q=80" alt="">
+    <div class="now-playing-text">
+      <span id="masterSongName">Select a song</span>
+      <span id="masterArtistName">—</span>
+    </div>
+    <button id="playerFav"><i class="fa-regular fa-heart"></i></button>
+  </div>
+
+  <!-- Center -->
+  <div class="player-center">
+    <div class="player-controls">
+      <button class="ctrl-btn" id="shuffleBtn" title="Shuffle"><i class="fa-solid fa-shuffle"></i></button>
+      <button class="ctrl-btn" id="prevBtn"><i class="fa-solid fa-backward-step fa-lg"></i></button>
+      <button id="masterPlay"><i class="fa-solid fa-play"></i></button>
+      <button class="ctrl-btn" id="nextBtn"><i class="fa-solid fa-forward-step fa-lg"></i></button>
+      <button class="ctrl-btn" id="loopBtn" title="Loop"><i class="fa-solid fa-repeat"></i></button>
+    </div>
+    <div class="progress-row">
+      <span id="currentTime">0:00</span>
+      <input type="range" id="myProgressBar" value="0" min="0" max="100" step="0.1">
+      <span id="totalDuration">0:00</span>
+    </div>
+  </div>
+
+  <!-- Right -->
+  <div class="player-right">
+    <button class="vol-btn" id="muteBtn"><i class="fa-solid fa-volume-high"></i></button>
+    <input type="range" id="volumeControl" min="0" max="100" value="80">
+  </div>
+</div>
+
+<script src="script.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+
+</body>
+</html>

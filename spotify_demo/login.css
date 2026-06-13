@@ -1,0 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    background:#000;
+    overflow:hidden;
+}
+
+/* Background Glow */
+
+body::before{
+    content:"";
+    position:absolute;
+    width:300px;
+    height:300px;
+    background:#1DB954;
+    border-radius:50%;
+    filter:blur(120px);
+
+    top:10%;
+    left:15%;
+}
+
+body::after{
+    content:"";
+    position:absolute;
+    width:250px;
+    height:250px;
+    background:#1ed760;
+    border-radius:50%;
+    filter:blur(120px);
+
+    bottom:10%;
+    right:15%;
+}
+
+.container{
+    position:relative;
+    z-index:10;
+}
+
+.login-box{
+
+    width:380px;
+
+    padding:40px;
+
+    background:rgba(0,0,0,0.75);
+
+    border:1px solid rgba(29,185,84,.4);
+
+    border-radius:20px;
+
+    backdrop-filter:blur(15px);
+
+    text-align:center;
+
+    box-shadow:
+    0 0 15px #1DB954,
+    0 0 30px #1DB954;
+}
+
+.login-box h1{
+    color:#1DB954;
+    font-size:42px;
+    margin-bottom:10px;
+
+   
+}
+
+.login-box h2{
+    color:white;
+    margin-bottom:25px;
+}
+
+.login-box input{
+
+    width:100%;
+
+    padding:14px;
+
+    margin:10px 0;
+
+    border:none;
+
+    outline:none;
+
+    border-radius:10px;
+
+    background:#111;
+
+    color:white;
+
+    border:1px solid #333;
+}
+
+.login-box input:focus{
+
+    border:1px solid #1DB954;
+
+    box-shadow:0 0 15px #1DB954;
+}
+
+.login-box button{
+
+    width:100%;
+
+    padding:14px;
+
+    margin-top:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    cursor:pointer;
+
+    background:#1DB954;
+
+    color:black;
+
+    font-weight:600;
+
+    transition:.3s;
+}
+
+.login-box button:hover{
+
+    transform:translateY(-2px);
+
+    box-shadow:
+    0 0 15px #1DB954,
+    0 0 30px #1DB954;
+}
+
+.login-box p{
+
+    margin-top:20px;
+
+    color:white;
+}
+
+.login-box a{
+
+    color:#1DB954;
+
+    text-decoration:none;
+
+    font-weight:600;
+}
