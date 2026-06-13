@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>GardenNet</title>
+
+  <link rel="stylesheet" href="style.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar">
+    <div class="container">
+
+      <!-- 🌿 Logo + Brand -->
+      <a class="navbar-brand d-flex align-items-center" href="index.html">
+        <div class="logo-box me-2">🌿</div>
+        <span class="brand-name">GardenNet</span>
+      </a>
+
+      <!-- 📱 Mobile Toggle -->
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- 🔗 Menu -->
+      <div class="collapse navbar-collapse" id="navMenu">
+        <ul class="navbar-nav ms-auto align-items-lg-center">
+
+          <li class="nav-item">
+            <a class="nav-link nav-hover" href="index.html">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-hover" href="explore.html">Explore</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link nav-hover" href="exchange.html">Exchange</a>
+          </li>
+
+
+          <li class="nav-item">
+            <a class="nav-link nav-hover" href="profile.html">Profile</a>
+          </li>
+          >
+
+          <li class="nav-item" id="loginBtn">
+            <a class="btn btn-light ms-lg-3 mt-2 mt-lg-0" href="login.html">Login</a>
+          </li>
+
+          <li class="nav-item d-none" id="logoutBtn">
+            <button class="btn btn-danger ms-lg-3 mt-2 mt-lg-0" onclick="logoutUser()">
+              Logout
+            </button>
+          </li>
+
+        </ul>
+      </div>
+
+    </div>
+  </nav>
+
+
+  <!-- Hero -->
+  <div class="hero">
+
+    <div class="position-relative">
+
+      <!-- Image -->
+      <div class="position-relative">
+        <img src="hero1.jpg" class="w-100" style="height:450px; object-fit:cover;">
+      </div>
+
+      <!-- 🔥 OVERLAY  -->
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: rgba(0,0,0,0.3);"></div>
+
+      <!-- Text content -->
+      <div class="position-absolute top-50 start-50 translate-middle text-center text-white">
+        <h1 class="display-4 fw-bold">Grow Together </h1>
+        <p class="lead">Connect, share & nurture your plants community</p>
+
+        <a href="login.html" class="btn btn-success btn-lg mt-3 px-4">
+          Join Community
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container mt-5 text-center">
+
+    <h2>Why GardenNet? </h2>
+
+    <div class="row mt-4">
+
+      <div class="col-md-4">
+        <h4>🌿Learn Gardening</h4>
+        <p>Get tips from experts and grow healthy plants.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>🔄 Exchange Seeds</h4>
+        <p>Trade seeds and grow your collection.</p>
+      </div>
+
+      <div class="col-md-4">
+        <h4>📅 Join Events</h4>
+        <p>Participate in community workshops.</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container mt-5">
+
+    <h3>Trending Plants </h3>
+
+    <div class="row mt-3">
+
+      <div class="col-md-4">
+        <div class="card shadow">
+          <img src="img1.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5>Snake Plant</h5>
+            <p>Easy indoor plant =</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow">
+          <img src="img2.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5>Aloe Vera</h5>
+            <p>Medicinal plant =</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-4">
+        <div class="card shadow">
+          <img src="img3.jpg" class="card-img-top">
+          <div class="card-body">
+            <h5>Money Plant</h5>
+            <p>Lucky & decorative =</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="bg-success text-white text-center mt-5 p-5">
+
+    <div class="row">
+
+      <div class="col-md-4">
+        <h2>500+</h2>
+        <p>Gardeners</p>
+      </div>
+
+      <div class="col-md-4">
+        <h2>1200+</h2>
+        <p>Plants Shared</p>
+      </div>
+
+      <div class="col-md-4">
+        <h2>50+</h2>
+        <p>Events Hosted</p>
+      </div>
+
+    </div>
+
+  </div>
+
+  <div class="container mt-5">
+
+    <h3>Create Post =</h3>
+
+    <input type="text" id="postText" class="form-control mt-2" placeholder="Write something about your plant...">
+
+    <input type="file" id="postImage" class="form-control mt-2">
+
+    <button class="btn btn-success mt-2 w-100" onclick="addPost()">
+      Post
+    </button>
+
+  </div>
+
+
+  <!-- Feed -->
+  <div class="container mt-5 fade-in">
+    <h3>Community Feed =</h3>
+
+    <div id="feedContainer"></div>
+
+    <div class="card mt-3">
+      <img src="https://via.placeholder.com/600x300">
+      <div class="card-body">
+        <h5>hello</h5>
+        <p>My new plant </p>
+        <button class="btn btn-outline-danger like-btn">❤️ Like</button>
+      </div>
+    </div>
+
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+<footer class="bg-dark text-white text-center p-3 mt-5">
+  <p>© 2026 GardenNet | Made by Aarchi </p>
+</footer>
+
+</html>
